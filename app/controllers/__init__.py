@@ -1,0 +1,1 @@
+# controllers folder stores all files we'll be working with.
