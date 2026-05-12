@@ -15,7 +15,6 @@ class Book(db.Model):  # book class is subclass inheriting from super class mode
     genre = db.Column(db.String(50), nullable=False)
     description = db.Column(db.String(255), nullable=False)
     image = db.Column(db.String(255), nullable=True)
-    # WHY do we need to keep track of the user id
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     company_id = db.Column(db.Integer, db.ForeignKey('company.id'))
     company = db.relationship('Company', backref='books')  # backref to navigate back from child to parent class

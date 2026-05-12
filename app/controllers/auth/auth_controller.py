@@ -11,9 +11,6 @@ auth = Blueprint('auth', __name__, url_prefix='/api/v1/auth')
 
 # user registration
 
-# storing request values
-
-
 @auth.route('/register', methods=['POST'])
 def register_user():
     data = request.json
