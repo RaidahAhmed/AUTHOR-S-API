@@ -12,9 +12,9 @@ class Company(db.Model):
     description = db.Column(db.Text(), nullable=False)
     # referring to the users table,since customised #WILL be the parent table. #1:M relationship  because an author can have multiple companies
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
-    user = db.relationship('User', backref='companies')  # why?
-    created_at = db.Column(db.DateTime, default=datetime.now())
-    updated_at = db.Column(db.DateTime, onupdate=datetime.now())
+    user = db.relationship('User', backref='companies') #User parent table, companies child table.
+    created_at = db.Column(db.DateTime, default=datetime.now)
+    updated_at = db.Column(db.DateTime, onupdate=datetime.now)
 
     # not paassing in the id because it is already implemented
     def __init__(self, name, origin, description, user_id):
